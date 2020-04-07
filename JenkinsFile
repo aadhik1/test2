@@ -6,8 +6,10 @@ pipeline {
     stages {
         stage('Clone app repo') {
             steps {
+               GIT_BRANCH_LOCAL = sh ( script: "echo $Branch | sed -e 's|origin/||g'",returnStdout: true).trim()
+               echo "Git branch: ${GIT_BRANCH_LOCAL}"
                 
-                git 'https://github.com/aadhik1/test.git'
+               git 'https://github.com/aadhik1/test.git'
                 
             }
         }
