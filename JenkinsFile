@@ -1,4 +1,4 @@
-def branch_name = env.GIT_BRANCH.toString().split("/")[1]
+
 pipeline {
     agent  any
     environment{
@@ -9,6 +9,7 @@ pipeline {
             steps {
                
                echo "Git branch: ${GIT_BRANCH}"
+               branch_name = env.GIT_BRANCH.toString().split("/")[1]
                 
                git branch: ${branch_name}, url: 'https://github.com/aadhik1/test.git''
                 
