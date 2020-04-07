@@ -11,4 +11,5 @@ pipeline {
                 git 'https://github.com/aadhik1/test2.git'
             }
         }
-        }
+     }
+}
