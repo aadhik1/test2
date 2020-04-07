@@ -1,3 +1,4 @@
+def branch_name = env.BRANCH_NAME.toString().split("/")[1]
 pipeline {
     agent  any
     environment{
@@ -9,7 +10,7 @@ pipeline {
                
                echo "Git branch: ${GIT_BRANCH}"
                 
-               git 'https://github.com/aadhik1/test.git'
+               git branch: ${branch_name}, url: 'https://github.com/aadhik1/test.git''
                 
             }
         }
@@ -18,7 +19,7 @@ pipeline {
                 sh '[ -d \'subdir\' ] && rm -rf subdir'
                 sh 'mkdir  subdir'
                 dir ('subdir'){
-                git 'https://github.com/aadhik1/test3.git'}
+                git branch: ${branch_name}, url: 'https://github.com/aadhik1/test3.git''}
             }
         }
         
