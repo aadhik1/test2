@@ -6,10 +6,6 @@ pipeline {
                 git 'https://github.com/aadhik1/test.git'
             }
         }
-        stage('Clone Middleware repo') {
-            steps {
-                git 'https://github.com/aadhik1/test2.git'
-            }
-        }
+        
      }
 }
