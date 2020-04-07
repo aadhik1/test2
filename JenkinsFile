@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone app repo') {
             steps {
-                git 'https://github.com/aadhik1/test3.git'
+                git 'https://github.com/aadhik1/test.git'
             }
         }
         stage('Clone Middleware repo') {
