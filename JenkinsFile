@@ -10,8 +10,8 @@ pipeline {
         stage('Clone Middleware repo') {
             steps {
                 sh 'mkdir subdir'
-                dir ('subdir')
-                git 'https://github.com/aadhik1/test3.git'
+                dir ('subdir'){
+                git 'https://github.com/aadhik1/test3.git'}
             }
         }
         
