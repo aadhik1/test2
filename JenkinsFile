@@ -13,7 +13,7 @@ pipeline {
                echo "${branch_name}"
                
                 
-               git branch: 'develop', url: 'https://github.com/aadhik1/test.git'
+               git branch: "${branch_name}", url: 'https://github.com/aadhik1/test.git'
                 
             }
         }
@@ -22,7 +22,7 @@ pipeline {
                 sh '[ -d \'subdir\' ] && rm -rf subdir'
                 sh 'mkdir  subdir'
                 dir ('subdir'){
-                git branch: 'develop', url: 'https://github.com/aadhik1/test3.git'}
+                git branch: "${branch_name}", url: 'https://github.com/aadhik1/test3.git'}
             }
         }
         
