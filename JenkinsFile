@@ -12,8 +12,7 @@ pipeline {
         }
         stage('Clone Middleware repo') {
             steps {
-                script { if (sh '[ -d subdir ]') {
-                sh 'rm -rf  subdir'}
+                sh '[ -d \'subdir\' ] && rm -rf subdir'
                 sh 'mkdir  subdir'
                 dir ('subdir'){
                 git 'https://github.com/aadhik1/test3.git'}
