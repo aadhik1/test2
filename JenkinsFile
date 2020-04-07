@@ -1,5 +1,8 @@
 pipeline {
     agent  any
+    environment{
+        MY_DIR = 'subdir'
+    }
     stages {
         stage('Clone app repo') {
             steps {
@@ -9,7 +12,9 @@ pipeline {
         }
         stage('Clone Middleware repo') {
             steps {
-                sh 'mkdir subdir'
+                script { if [ -d subdir ] {
+                sh 'rm -rf  subdir'}
+                sh 'mkdir  subdir'
                 dir ('subdir'){
                 git 'https://github.com/aadhik1/test3.git'}
             }
