@@ -1,3 +1,14 @@
-echo 'downlaoded repo test'
-echo 'test 5'
-echo 'this is ne'
+pipeline {
+    agent  any
+    stages {
+        stage('Clone app repo') {
+            steps {
+                git 'https://github.com/aadhik1/test.git'
+            }
+        }
+        stage('Clone Middleware repo') {
+            steps {
+                git 'https://github.com/aadhik1/test2.git'
+            }
+        }
+        }
