@@ -1,2 +1,3 @@
 echo 'downlaoded repo test'
 echo 'test 6'
+sh label: '', script: 'cat index.html'
