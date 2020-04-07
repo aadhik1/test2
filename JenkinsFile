@@ -4,7 +4,7 @@ pipeline {
     agent  any
     environment{
         MY_DIR = 'subdir'
-        def branch_name = "${env.GIT_BRANCH}".split("/")[1]
+        def branch_name = "${env.GIT_BRANCH}".toString().split("/")[1]
     }
     stages {
         stage('Clone app repo') {
