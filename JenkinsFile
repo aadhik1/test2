@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage('Clone app repo') {
             steps {
-                git 'https://github.com/aadhik1/test.git'
+                
+                echo ${BUILD_URL}
                 
             }
         }
