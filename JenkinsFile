@@ -1,4 +1,5 @@
-def branch_name = env.GIT_BRANCH.toString().split("/")[1]
+//def branch_name = env.GIT_BRANCH.toString().split("/")[1]
+def branch_name = develop
 pipeline {
     agent  any
     environment{
